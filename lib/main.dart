@@ -43,8 +43,23 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        foregroundColor: Colors.green,
-        title: Text("WhatsApp"),
+        //foregroundColor: Colors.green,
+        title: const Text(
+          "WhatsApp",
+          style: TextStyle(color: Colors.green),
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.local_see_outlined,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.search,
+              ))
+        ],
       ),
       body: Center(
         child: Column(

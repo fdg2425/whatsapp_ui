@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
         alignment: Alignment.topRight,
         child: Container(
           margin: EdgeInsets.only(top: 80, right: 4),
-          height: 200,
+          height: 280,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(22),
@@ -96,22 +96,32 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: EdgeInsets.zero,
               children: [
                 ListTile(
-                  leading: const Icon(Icons.home),
-                  title: const Text("Home"),
+                  title: const Text('New group'),
                   onTap: () {
                     Navigator.pop(context); // Close the drawer
                   },
                 ),
                 ListTile(
-                  leading: const Icon(Icons.settings),
-                  title: const Text("Settings"),
+                  title: const Text('New broadcast'),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.pop(context); // Close the drawer
                   },
                 ),
                 ListTile(
-                  leading: const Icon(Icons.logout),
-                  title: const Text("Logout"),
+                  title: const Text('Linked devices'),
+                  onTap: () {
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+                ListTile(
+                  title: const Text('Starred messages'),
+                  onTap: () {
+                    Navigator.pop(context); // Close the drawer
+                  },
+                ),
+                ListTile(
+                  //leading: const Icon(Icons.settings),
+                  title: const Text("Settings"),
                   onTap: () {
                     Navigator.pop(context);
                   },

@@ -60,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {},
               icon: const Icon(
                 Icons.search,
-              ))
+              )),
+          EndDrawerButton()
         ],
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1.0), // Height of the divider
@@ -71,10 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Divider(height: 1, thickness: 1, color: Colors.grey),
         ),
       ),
-      drawer: Align(
-        alignment: Alignment.topLeft,
+      endDrawer: Align(
+        alignment: Alignment.topRight,
         child: Container(
-          margin: EdgeInsets.only(top: 80, left: 4),
+          margin: EdgeInsets.only(top: 80, right: 4),
           height: 200,
           decoration: BoxDecoration(
             color: Colors.white,

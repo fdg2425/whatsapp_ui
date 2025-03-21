@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         //foregroundColor: Colors.green,
@@ -60,6 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icons.search,
               ))
         ],
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1.0), // Height of the divider
+          // child: Container(
+          //   color: Colors.grey.shade300, // Color of the separator
+          //   height: 0.5, // Thickness
+          // ),
+          child: Divider(height: 1, thickness: 1, color: Colors.grey),
+        ),
       ),
       body: Center(
         child: Column(

@@ -1,0 +1,1 @@
+The drawer on Chrome does not appear at the separator

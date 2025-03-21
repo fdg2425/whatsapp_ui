@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: const Icon(
                 Icons.search,
               )),
-          EndDrawerButton()
+          const EndDrawerButton()
         ],
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1.0), // Height of the divider
@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       endDrawer: Align(
         alignment: Alignment.topRight,
         child: Container(
-          margin: EdgeInsets.only(top: 80, right: 4),
+          margin: const EdgeInsets.only(top: 80, right: 4),
           height: 280,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.grey.shade300,
                 blurRadius: 8,
                 spreadRadius: 2,
-                offset: Offset(4, 4), // Shadow position
+                offset: const Offset(4, 4), // Shadow position
               ),
             ],
           ),
@@ -128,7 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SettingsPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const SettingsPage()),
                     );
                   },
                 ),

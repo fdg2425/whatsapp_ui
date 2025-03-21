@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'settings_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -124,6 +126,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: const Text("Settings"),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SettingsPage()),
+                    );
                   },
                 ),
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui/notifications_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -6,7 +7,11 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Settings")),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text("Settings"),
+        backgroundColor: Colors.white,
+      ),
       body: Center(
           child: Column(
         children: [
@@ -31,7 +36,42 @@ class SettingsPage extends StatelessWidget {
                           color: Colors.green)),
                 ],
               )),
-          const Text("Settings Page"),
+          const Divider(
+            height: 10.0,
+            thickness: 1.0,
+            color: Colors.grey,
+          ),
+          const ListTile(
+            leading: Icon(Icons.key),
+            title: Text(
+              "Account",
+              style: TextStyle(fontSize: 18),
+            ),
+            subtitle: Text("subtitle"),
+          ),
+          const ListTile(
+            leading: Icon(Icons.lock_outline),
+            title: Text(
+              "Privacy",
+              style: TextStyle(fontSize: 18),
+            ),
+            subtitle: Text("subtitle"),
+          ),
+          ListTile(
+            leading: const Icon(Icons.notifications_outlined),
+            title: const Text(
+              "Notifications",
+              style: TextStyle(fontSize: 18),
+            ),
+            subtitle: const Text("subtitle"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NotificationsPage()),
+              );
+            },
+          ),
         ],
       )),
     );

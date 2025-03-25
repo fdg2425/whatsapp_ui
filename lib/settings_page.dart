@@ -31,6 +31,25 @@ class SettingsPage extends StatelessWidget {
                           color: Colors.green)),
                 ],
               )),
+              const Divider(height: 20, thickness: 1, color: Colors.grey),
+              const ListTile(
+                leading: Icon(Icons.key_outlined),
+                title: Text("Account", style:TextStyle(fontSize: 18)),
+                subtitle: Text("Subtitle"),
+                
+              ),
+              const ListTile(
+                leading: Icon(Icons.lock_outline),
+                title: Text("Privacy", style:TextStyle(fontSize: 18)),
+                subtitle: Text("Subtitle"),
+                
+              ),
+              const ListTile(
+                leading: Icon(Icons.notifications_outlined),
+                title: Text("Notifications", style:TextStyle(fontSize: 18)),
+                subtitle: Text("Subtitle"),
+                
+              ),
         ],
       )),
     );

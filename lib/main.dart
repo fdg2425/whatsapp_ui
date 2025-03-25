@@ -32,14 +32,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   int _selectedIndex = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  static final List<Widget> _widgetOptions = <Widget>[
+    const Center(child: Text('Home Page', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('Search Page', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -145,31 +144,32 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            if (_selectedIndex == 0)
-              const Text(
-                'Home page',
-              ),
-            if (_selectedIndex == 1)
-              const Text(
-                'Search page',
-              ),
-            if (_selectedIndex == 2)
-              const Text(
-                'Profile page',
-              ),
-            Text(
-              '$_selectedIndex',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: <Widget>[
+      //       if (_selectedIndex == 0)
+      //         const Text(
+      //           'Home page',
+      //         ),
+      //       if (_selectedIndex == 1)
+      //         const Text(
+      //           'Search page',
+      //         ),
+      //       if (_selectedIndex == 2)
+      //         const Text(
+      //           'Profile page',
+      //         ),
+      //       Text(
+      //         '$_selectedIndex',
+      //         style: Theme.of(context).textTheme.headlineMedium,
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      body: _widgetOptions[_selectedIndex],
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

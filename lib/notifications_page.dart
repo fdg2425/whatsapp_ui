@@ -8,7 +8,7 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
-bool switchvalue = true;
+  bool switchvalue = true;
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +18,18 @@ bool switchvalue = true;
           child: Column(
         children: [
           const Divider(height: 20, thickness: 1, color: Colors.grey),
-              ListTile(
-                title: const Text("Conversation tones", style:TextStyle(fontSize: 18)),
-                subtitle: const Text("Subtitle"),
-                trailing: Switch(value: switchvalue, onChanged: (value) {
-                  switchvalue = value;
-                },),
-              ),
-              
+          SwitchListTile(
+            title: const Text("Conversation tones",
+                style: TextStyle(fontSize: 18)),
+            subtitle: const Text("Subtitle"),
+            activeColor: Colors.green,
+            value: switchvalue,
+            onChanged: (value) {
+              setState(() {
+                switchvalue = value;
+              });
+            },
+          ),
         ],
       )),
     );

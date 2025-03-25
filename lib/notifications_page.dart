@@ -21,21 +21,19 @@ class _NotificationsPageState extends State<NotificationsPage> {
       body: Center(
           child: Column(
         children: [
-          ListTile(
+          SwitchListTile(
             title: const Text(
               "Conversation Tones",
               style: TextStyle(fontSize: 18),
             ),
             subtitle: const Text("subtitle"),
-            trailing: Switch(
-              value: conversationTones,
-              activeTrackColor: Colors.green,
-              onChanged: (value) {
-                setState(() {
-                  conversationTones = value;
-                });
-              },
-            ),
+            value: conversationTones,
+            activeTrackColor: Colors.green,
+            onChanged: (value) {
+              setState(() {
+                conversationTones = value;
+              });
+            },
           )
         ],
       )),

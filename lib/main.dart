@@ -171,9 +171,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.chat_outlined, size: 34), label: 'Chats'),
+          BottomNavigationBarItem(icon: Icon(Icons.update_outlined, size: 34), label: 'Updates'),
+          BottomNavigationBarItem(icon: Icon(Icons.call_outlined, size: 34), label: 'Calls'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blue,

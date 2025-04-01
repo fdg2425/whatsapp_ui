@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'active_navigationbar_icon.dart';
 import 'settings_page.dart';
 
 void main() {
@@ -20,7 +21,15 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white, // AppBar background
           // foregroundColor: Colors.white, // Text & icon color
           // elevation: 4, // Shadow effect
-        ), // Set background color here
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor:
+              Colors.white, // Background color of BottomNavigationBar
+          selectedItemColor: Colors.black, // Color for selected item
+          unselectedItemColor: Colors.black, // Color for unselected items
+          elevation: 10, // Shadow effect
+        ),
+// Set background color here
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -41,9 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   static final List<Widget> _pages = <Widget>[
-    const Center(child: Text('Home Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Search Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('Chats Page', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('Updates Page', style: TextStyle(fontSize: 24))),
+    const Center(
+        child: Text('Communities Page', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('Calls Page', style: TextStyle(fontSize: 24))),
   ];
 
   // void _incrementCounter() {
@@ -174,16 +185,31 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 34,
+        type: BottomNavigationBarType.fixed,
+        selectedLabelStyle:
+            const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        unselectedLabelStyle: const TextStyle(fontSize: 16),
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.chat_outlined, size: 34), label: 'Chats'),
+              activeIcon: ActiveNavigationBarIcon(iconData: Icons.chat_sharp),
+              icon: Icon(Icons.chat_outlined),
+              label: 'Chats'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.update_outlined, size: 34), label: 'Updates'),
+              activeIcon: ActiveNavigationBarIcon(iconData: Icons.update_sharp),
+              icon: Icon(Icons.update_outlined),
+              label: 'Updates'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.call_outlined, size: 34), label: 'Calls'),
+              activeIcon:
+                  ActiveNavigationBarIcon(iconData: Icons.groups_3_sharp),
+              icon: Icon(Icons.groups_3_outlined),
+              label: 'Communities'),
+          BottomNavigationBarItem(
+              activeIcon: ActiveNavigationBarIcon(iconData: Icons.call_sharp),
+              icon: Icon(Icons.call_outlined),
+              label: 'Calls'),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
         onTap: (value) {
           setState(() {
             _selectedIndex = value;

@@ -15,6 +15,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white, // AppBar background
+          // foregroundColor: Colors.white, // Text & icon color
+          // elevation: 4, // Shadow effect
+        ), // Set background color here
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -49,10 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       drawerScrimColor: Colors.transparent, // Remove the overlay effect
       appBar: AppBar(
-        backgroundColor: Colors.white,
         //foregroundColor: Colors.green,
         title: const Text(
           "WhatsApp",
@@ -171,9 +175,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.chat_outlined, size: 34), label: 'Chats'),
-          BottomNavigationBarItem(icon: Icon(Icons.update_outlined, size: 34), label: 'Updates'),
-          BottomNavigationBarItem(icon: Icon(Icons.call_outlined, size: 34), label: 'Calls'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.chat_outlined, size: 34), label: 'Chats'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.update_outlined, size: 34), label: 'Updates'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.call_outlined, size: 34), label: 'Calls'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blue,

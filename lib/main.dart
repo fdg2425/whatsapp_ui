@@ -178,21 +178,31 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: _onItemTapped, // Change tab when clicked
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(
+              Icons.message,
+              size: 32,
+            ),
+            label: 'Chats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+            icon: Icon(
+              Icons.update,
+              size: 32,
+            ),
+            label: 'Updates',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(
+              Icons.call_outlined,
+              size: 32,
+            ),
+            label: 'Calls',
           ),
         ],
-        selectedItemColor: Colors.blue, // Active tab color
-        unselectedItemColor: Colors.grey, // Inactive tab color
+        selectedItemColor: Colors.black, // Active tab color
+        unselectedItemColor: Colors.black, // Inactive tab color
         showUnselectedLabels: true, // Show labels for all items
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
       ),
     );
   }

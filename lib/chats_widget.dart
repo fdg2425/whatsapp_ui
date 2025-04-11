@@ -3,13 +3,13 @@ import 'contact_list_tile.dart';
 import 'contact_provider.dart';
 
 class ChatsWidget extends StatelessWidget {
-  ChatsWidget({super.key});
+  ChatsWidget({super.key, required this.contactProvider});
 
-  final provider = ContactProvider();
+  final contactProvider;
 
   @override
   Widget build(BuildContext context) {
-    var contacts = provider.contacts;
+    var contacts = contactProvider.contacts;
 
     return Column(
       children: [

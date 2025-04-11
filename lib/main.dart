@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'active_navigationbar_icon.dart';
 import 'chats_widget.dart';
+import 'contact_provider.dart';
 import 'settings_page.dart';
 
 void main() {
@@ -30,6 +33,11 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.black, // Color for unselected items
           elevation: 10, // Shadow effect
         ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.green, // Set your desired color
+          foregroundColor: Colors.white, // Set your desired color
+        ),
+
 // Set background color here
         useMaterial3: true,
       ),
@@ -50,13 +58,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
-  static final List<Widget> _pages = <Widget>[
-    ChatsWidget(),
-    const Center(child: Text('Updates Page', style: TextStyle(fontSize: 24))),
-    const Center(
-        child: Text('Communities Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Calls Page', style: TextStyle(fontSize: 24))),
-  ];
+  final contactProvider = ContactProvider();
 
   // void _incrementCounter() {
   //   setState(() {
@@ -66,6 +68,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> pages = <Widget>[
+      ChatsWidget(
+        contactProvider: contactProvider,
+      ),
+      const Center(child: Text('Updates Page', style: TextStyle(fontSize: 24))),
+      const Center(
+          child: Text('Communities Page', style: TextStyle(fontSize: 24))),
+      const Center(child: Text('Calls Page', style: TextStyle(fontSize: 24))),
+    ];
+
     return Scaffold(
       drawerScrimColor: Colors.transparent, // Remove the overlay effect
       appBar: AppBar(
@@ -179,11 +191,19 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // ),
-      body: _pages[_selectedIndex],
+      body: pages[_selectedIndex],
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        onPressed: () {
+          var random = Random();
+          var contacts = contactProvider.contacts;
+          var index = random.nextInt(contacts.length);
+          print("index is $index");
+          setState(() {
+            contacts[index].simulateNewMessage();
+          });
+        },
+        tooltip: 'simulate new message',
+        child: const Icon(Icons.add_box_rounded),
       ),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 34,

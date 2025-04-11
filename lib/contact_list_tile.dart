@@ -2,21 +2,32 @@ import 'package:flutter/material.dart';
 
 import 'contact.dart';
 
-class ContactListTile extends StatelessWidget {
+class ContactListTile extends StatefulWidget {
   const ContactListTile({super.key, required this.contact});
 
   final Contact contact;
 
   @override
+  State<ContactListTile> createState() => _ContactListTileState();
+}
+
+class _ContactListTileState extends State<ContactListTile> {
+  @override
   Widget build(BuildContext context) {
-    var imagePath = contact.imagePath ?? "assets/images/default_image.jpg";
+    var imagePath =
+        widget.contact.imagePath ?? "assets/images/default_image.jpg";
 
     return ListTile(
+      onTap: () {
+        setState(() {
+          widget.contact.countOfNewMessages = 0;
+        });
+      },
       leading: CircleAvatar(foregroundImage: AssetImage(imagePath)),
       title: Row(
         children: [
           Expanded(
-            child: Text(contact.name,
+            child: Text(widget.contact.name,
                 style: const TextStyle(
                     fontSize: 20, fontWeight: FontWeight.normal),
                 overflow: TextOverflow.ellipsis,
@@ -24,10 +35,12 @@ class ContactListTile extends StatelessWidget {
           ),
           const SizedBox(width: 15),
           Text(
-            contact.getDateOfLastMessageAsString(),
+            widget.contact.getDateOfLastMessageAsString(),
             style: TextStyle(
                 fontSize: 14,
-                color: contact.countOfNewMessages > 0 ? Colors.green : null),
+                color: widget.contact.countOfNewMessages > 0
+                    ? Colors.green
+                    : null),
           )
         ],
       ),
@@ -35,13 +48,13 @@ class ContactListTile extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              contact.lastMessage,
+              widget.contact.lastMessage,
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          if (contact.countOfNewMessages > 0)
+          if (widget.contact.countOfNewMessages > 0)
             Badge(
-              label: Text("${contact.countOfNewMessages}",
+              label: Text("${widget.contact.countOfNewMessages}",
                   style: const TextStyle(fontSize: 12)),
               backgroundColor: Colors.green,
             )

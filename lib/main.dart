@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   static final List<Widget> _pages = <Widget>[
-    const ChatsWidget(),
+    ChatsWidget(),
     const Center(child: Text('Updates Page', style: TextStyle(fontSize: 24))),
     const Center(
         child: Text('Communities Page', style: TextStyle(fontSize: 24))),

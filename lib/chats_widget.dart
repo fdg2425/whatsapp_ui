@@ -11,12 +11,12 @@ class ChatsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var contacts = contactProvider.contacts;
 
-    return Column(
-      children: [
-        ContactListTile(contact: contacts[0]),
-        ContactListTile(contact: contacts[1]),
-        ContactListTile(contact: contacts[2]),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          for (var contact in contacts) ContactListTile(contact: contact),
+        ],
+      ),
     );
   }
 }

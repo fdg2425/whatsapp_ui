@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'active_navigationbar_icon.dart';
 import 'chats_widget.dart';
-import 'contact_provider.dart';
+import 'contacts/contact_provider.dart';
 import 'settings_page.dart';
 
 void main() {
@@ -79,6 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
       const Center(child: Text('Calls Page', style: TextStyle(fontSize: 24))),
     ];
 
+    var statusBarHeight = MediaQuery.of(context).padding.top;
+    print(statusBarHeight);
+
     return Scaffold(
       drawerScrimColor: Colors.transparent, // Remove the overlay effect
       appBar: AppBar(
@@ -112,8 +115,8 @@ class _MyHomePageState extends State<MyHomePage> {
       endDrawer: Align(
         alignment: Alignment.topRight,
         child: Container(
-          margin: const EdgeInsets.only(
-              top: kIsWeb ? kToolbarHeight : 80, right: 4),
+          margin:
+              EdgeInsets.only(top: kToolbarHeight + statusBarHeight, right: 4),
           height: 280,
           decoration: BoxDecoration(
             color: Colors.white,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'contact_list_tile.dart';
-import 'contact_provider.dart';
+import 'contacts/contact_list_tile.dart';
+import 'contacts/contact_provider.dart';
 
 class ChatsWidget extends StatelessWidget {
   const ChatsWidget({super.key, required this.contactProvider});

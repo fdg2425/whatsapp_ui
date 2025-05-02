@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.black, // Color for unselected items
           elevation: 10, // Shadow effect
         ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Colors.green, // Set your desired color
           foregroundColor: Colors.white, // Set your desired color
         ),
@@ -197,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
           var random = Random();
           var contacts = contactProvider.contacts;
           var index = random.nextInt(contacts.length);
-          print("index is $index");
+          //print("index is $index");
           setState(() {
             contacts[index].simulateNewMessage();
           });

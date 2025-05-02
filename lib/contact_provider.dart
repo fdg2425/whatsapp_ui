@@ -28,10 +28,10 @@ class ContactProvider {
     contact.dateOfLastMessage = DateTime(2025, 03, 27, 00, 11);
     contacts.add(contact);
 
-    // for (var i = 0; i < 20; i++) {
-    //   contact = Contact("Test contact $i");
-    //   contact.countOfNewMessages = i;
-    //   contacts.add(contact);
-    // }
+    for (var i = 0; i < 500; i++) {
+      contact = Contact("Test contact $i");
+      contact.countOfNewMessages = i;
+      contacts.add(contact);
+    }
   }
 }

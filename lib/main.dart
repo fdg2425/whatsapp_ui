@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'active_navigationbar_icon.dart';
@@ -111,7 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
       endDrawer: Align(
         alignment: Alignment.topRight,
         child: Container(
-          margin: const EdgeInsets.only(top: 80, right: 4),
+          margin: const EdgeInsets.only(
+              top: kIsWeb ? kToolbarHeight : 80, right: 4),
           height: 280,
           decoration: BoxDecoration(
             color: Colors.white,

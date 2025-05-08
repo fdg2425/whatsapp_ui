@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
+//import 'package:flutter/foundation.dart';   // was needed for kIsWeb
 import 'package:flutter/material.dart';
 
 import 'active_navigationbar_icon.dart';
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     var statusBarHeight = MediaQuery.of(context).padding.top;
-    print(statusBarHeight);
+    //print(statusBarHeight);
 
     return Scaffold(
       drawerScrimColor: Colors.transparent, // Remove the overlay effect

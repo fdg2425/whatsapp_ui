@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'notifications_page.dart';
+import 'notification_settings_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -33,32 +33,29 @@ class SettingsPage extends StatelessWidget {
                           color: Colors.green)),
                 ],
               )),
-              const Divider(height: 20, thickness: 1, color: Colors.grey),
-              const ListTile(
-                leading: Icon(Icons.key_outlined),
-                title: Text("Account", style:TextStyle(fontSize: 18)),
-                subtitle: Text("Subtitle"),
-                
-              ),
-              const ListTile(
-                leading: Icon(Icons.lock_outline),
-                title: Text("Privacy", style:TextStyle(fontSize: 18)),
-                subtitle: Text("Subtitle"),
-                
-              ),
-              ListTile(
-                leading: const Icon(Icons.notifications_outlined),
-                title: const Text("Notifications", style:TextStyle(fontSize: 18)),
-                subtitle: const Text("Subtitle"),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const NotificationsPage()),
-                    );
-                },
-                
-              ),
+          const Divider(height: 20, thickness: 1, color: Colors.grey),
+          const ListTile(
+            leading: Icon(Icons.key_outlined),
+            title: Text("Account", style: TextStyle(fontSize: 18)),
+            subtitle: Text("Subtitle"),
+          ),
+          const ListTile(
+            leading: Icon(Icons.lock_outline),
+            title: Text("Privacy", style: TextStyle(fontSize: 18)),
+            subtitle: Text("Subtitle"),
+          ),
+          ListTile(
+            leading: const Icon(Icons.notifications_outlined),
+            title: const Text("Notifications", style: TextStyle(fontSize: 18)),
+            subtitle: const Text("Subtitle"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NotificationSettingsPage()),
+              );
+            },
+          ),
         ],
       )),
     );

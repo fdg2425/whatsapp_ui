@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class NotificationsPage extends StatefulWidget {
-  const NotificationsPage({super.key});
+class NotificationSettingsPage extends StatefulWidget {
+  const NotificationSettingsPage({super.key});
 
   @override
-  State<NotificationsPage> createState() => _NotificationsPageState();
+  State<NotificationSettingsPage> createState() =>
+      _NotificationSettingsPageState();
 }
 
-class _NotificationsPageState extends State<NotificationsPage> {
+class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
   bool switchvalue = true;
 
   @override

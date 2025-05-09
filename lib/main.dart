@@ -2,11 +2,10 @@ import 'dart:math';
 
 //import 'package:flutter/foundation.dart';   // was needed for kIsWeb
 import 'package:flutter/material.dart';
-
 import 'active_navigationbar_icon.dart';
 import 'chats_widget.dart';
 import 'contacts/contact_provider.dart';
-import 'settings_page.dart';
+import 'settings/settings_page.dart';
 
 void main() {
   runApp(const MyApp());

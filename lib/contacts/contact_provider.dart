@@ -28,7 +28,7 @@ class ContactProvider {
     contact.dateOfLastMessage = DateTime(2025, 03, 27, 00, 11);
     contacts.add(contact);
 
-    for (var i = 0; i < 500; i++) {
+    for (var i = 0; i < 15; i++) {
       contact = Contact("Test contact $i");
       contact.countOfNewMessages = i;
       contacts.add(contact);
